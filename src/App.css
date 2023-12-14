@@ -1,0 +1,89 @@
+@font-face {
+  src: url("./font/Titan/TitanOne-Regular.ttf");
+  font-family: "Titan";
+}
+
+*,
+*::before,
+*::after {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url("./img/background/bg.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+.header-h1 {
+  font-family: "Titan";
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  background: linear-gradient(to top, #e4f1ff, #7e30e1);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+    drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+    drop-shadow(0px 0px 1px black);
+}
+
+.button-start {
+  width: 250px;
+  margin: 15px 0;
+  border-radius: 0.25rem;
+  background: #4477ce;
+  box-shadow: 0px 2px 0px 0px black, 0px 10px 0px 0px #8cabff;
+  position: relative;
+  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+    drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black);
+}
+
+.button-start::before {
+  top: -2px;
+}
+
+.button-start::after {
+  bottom: -12px;
+}
+
+.button-start:hover:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+.button-children {
+  display: grid;
+  grid-template-columns: auto 65% auto;
+  place-content: center;
+  place-items: center;
+}
+
+.p-start,
+.fa-play,
+.fa-book,
+.fa-circle-info {
+  font-family: "Titan";
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.p-start {
+  color: #bbeaa6;
+  filter: drop-shadow(0px 5px 0px black);
+}
+
+.fa-play,
+.fa-book,
+.fa-circle-info {
+  color: #27005d;
+  filter: drop-shadow(0px 2px 0px #bbeaa6);
+  animation: fa-fade 1000ms linear infinite;
+}
