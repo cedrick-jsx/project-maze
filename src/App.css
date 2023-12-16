@@ -16,7 +16,6 @@ body {
   place-content: center;
   place-items: center;
   width: 100%;
-  height: 100vh;
   background: url("./img/background/bg.jpg") no-repeat center fixed;
   background-size: cover;
 }
@@ -45,14 +44,6 @@ body {
     drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black);
 }
 
-.button-start::before {
-  top: -2px;
-}
-
-.button-start::after {
-  bottom: -12px;
-}
-
 .button-start:hover:active {
   transform: translateY(3px);
   box-shadow: none;
@@ -68,7 +59,8 @@ body {
 .p-start,
 .fa-play,
 .fa-book,
-.fa-circle-info {
+.fa-circle-info,
+.fa-right-from-bracket {
   font-family: "Titan";
   font-size: 2.3rem;
   text-transform: uppercase;
@@ -82,8 +74,22 @@ body {
 
 .fa-play,
 .fa-book,
-.fa-circle-info {
+.fa-circle-info,
+.fa-right-from-bracket {
   color: #27005d;
   filter: drop-shadow(0px 2px 0px #bbeaa6);
   animation: fa-fade 1000ms linear infinite;
+}
+
+.bio-text {
+  font-family: "Titan";
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: justify;
+  color: #27005d;
+  filter: drop-shadow(0px 0px 1px #bbeaa6) drop-shadow(0px 0px 1px azure)
+    drop-shadow(0px 0px 1px #bbeaa6);
+  width: 500px;
+  padding: 0 10px;
 }
