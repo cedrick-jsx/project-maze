@@ -12,10 +12,6 @@
 }
 
 body {
-  display: flex;
-  place-content: center;
-  place-items: center;
-  width: 100%;
   background: url("./img/background/bg.jpg") no-repeat center fixed;
   background-size: cover;
 }
@@ -25,7 +21,14 @@ body {
   font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: 10px;
-  background: linear-gradient(to top, #e4f1ff, #7e30e1);
+  background: linear-gradient(
+    to top,
+    #e4f1ff,
+    #7e30e1,
+    #e26ee5,
+    #392467,
+    #fed9ed
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
@@ -37,11 +40,15 @@ body {
   width: 250px;
   margin: 15px 0;
   border-radius: 0.25rem;
-  background: #4477ce;
-  box-shadow: 0px 2px 0px 0px black, 0px 10px 0px 0px #8cabff;
+  background: #f1eaff;
+  box-shadow: 0px 2px 0px 0px black, 0px 10px 0px 0px #d0a2f7;
   position: relative;
   filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
     drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black);
+}
+
+.button-start:hover {
+  background: #392467;
 }
 
 .button-start:hover:active {
@@ -51,40 +58,41 @@ body {
 
 .button-children {
   display: grid;
-  grid-template-columns: auto 65% auto;
+  grid-template-columns: auto 66%;
   place-content: center;
   place-items: center;
+  color: #392467;
+}
+
+.button-children:hover {
+  color: #f1eaff;
 }
 
 .p-start,
 .fa-play,
 .fa-book,
-.fa-circle-info,
+.fa-people-group,
 .fa-right-from-bracket {
   font-family: "Titan";
   font-size: 2.3rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
 .p-start {
-  color: #bbeaa6;
-  filter: drop-shadow(0px 5px 0px black);
+  letter-spacing: 3px;
 }
 
 .fa-play,
 .fa-book,
-.fa-circle-info,
+.fa-people-group,
 .fa-right-from-bracket {
-  color: #27005d;
-  filter: drop-shadow(0px 2px 0px #bbeaa6);
   animation: fa-fade 1000ms linear infinite;
 }
 
 .bio-text {
   font-family: "Titan";
   font-size: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-align: justify;
   color: #27005d;
