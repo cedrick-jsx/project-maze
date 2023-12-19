@@ -9,11 +9,12 @@ export default function Button(props) {
         "w-[180px] my-[15px] rounded-[0.25rem] bg-[#f1eaff] shadow-[0_2px_0_0_#000000,0_10px_0_0_#d0a2f7] drop-shadow-custom hover:bg-[#392467] hover:active:translate-y-[3px] hover:active:shadow-none"
       }
       onClick={() => {
-        if (props.value === "about") navigate("/About", { replace: true });
-        else if (props.value === "start" || props.value === "level")
+        if (props.value === "start" || props.value === "level")
           navigate("/Level", { replace: true });
-        else if (props.value === "back") navigate("/", { replace: true });
+        else if (props.value === "guide") navigate("Guide", { replace: true });
+        else if (props.value === "about") navigate("/About", { replace: true });
         else if (props.value === "play") navigate("/Play", { replace: true });
+        else if (props.value === "back") navigate("/", { replace: true });
       }}
     >
       {props.children}
