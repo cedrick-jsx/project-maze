@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Titan;
+  src: url("./font/Titan/TitanOne-Regular.ttf") format("truetype");
+}
