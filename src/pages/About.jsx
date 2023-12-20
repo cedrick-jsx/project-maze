@@ -1,11 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button, {
-  ButtonChildren,
-  ButtonChildrenContainer,
-} from "../components/Button";
+import Button, { ButtonName } from "../components/Button";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 import Cedrick from "../img/teams/cedrick.png";
 
 const bio = [
@@ -32,26 +28,51 @@ const bio = [
 export default function About() {
   return (
     <Container value="none">
-      <Header>About Us</Header>
-
+      <Header>About Amaze</Header>
+      <div
+        className={
+          "bg-slate-50 w-full p-[3%_5%] mb-[20px] font-titan tracking-[3px] uppercase text-justify text-[17px]"
+        }
+      >
+        Amaze is a simple web-responsive game which was programmed using React
+        Framework. Amaze is a project game dedicated to subject Application
+        Development & Emerging Technologies. {'"'}AMAZE: Let Your Imagination
+        Soar, Prepare to Be Amazed
+        {'!"'}
+      </div>
+      <Header>Meet The Team</Header>
       {bio.map((data, id) => (
         <div
           key={id}
           className={
-            "flex place-content-evenly place-items-center my-[10px] bg-slate-50"
+            "flex place-content-evenly place-items-center bg-slate-50 min-w-full w-full max-w-full p-[3%_5%]"
           }
         >
-          <div
-            className={`w-[200px] h-[150px] bg-slate-50 ${
-              id % 2 === 1 && "order-2"
-            }`}
-          >
-            <img
-              className="w-full h-full"
-              src={id === 0 && Cedrick}
-              alt={id === 0 && "Cedrick"}
-            />
+          <div className={`relative  ${id % 2 === 1 && "order-2"} `}>
+            <div
+              className={`w-[200px] h-[150px] bg-[black]
+              shadow-[0_0_0_5px_navy,0_50px_0_5px_navy] z-[10]`}
+            ></div>
+            <div
+              className={`w-[200px] h-[150px] bg-[black] ${
+                id % 2 === 1 && "order-2"
+              } shadow-[0_0_0_5px_navy,0_50px_0_5px_navy] absolute top-[0] left-[0] w-full h-full rotate-[-10deg]`}
+            ></div>
+            <div
+              className={`w-[200px] h-[150px] bg-[black]
+              shadow-[0_0_0_5px_navy,0_50px_0_5px_navy] z-[10] absolute top-0 left-0`}
+            >
+              <img
+                className="w-full h-full"
+                src={id === 0 && Cedrick}
+                alt={id === 0 && "Cedrick"}
+              />
+              <p className={"text-center uppercase text-[azure] font-[600]"}>
+                {id === 0 ? "Developer" : "Lorem"}
+              </p>
+            </div>
           </div>
+
           <div
             className={
               "font-titan text-[15px] tracking-[1px] text-justify text-[#27005d] w-full uppercase p-[10px]"
@@ -63,13 +84,7 @@ export default function About() {
       ))}
 
       <Button value="back">
-        <ButtonChildrenContainer>
-          <FontAwesomeIcon
-            className={"text-[1.5rem] animate-faFade"}
-            icon={faRightFromBracket}
-          />
-          <ButtonChildren>Back</ButtonChildren>
-        </ButtonChildrenContainer>
+        <ButtonName>Back</ButtonName>
       </Button>
     </Container>
   );

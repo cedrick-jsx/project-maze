@@ -9,25 +9,4 @@
 body {
   background: url("./img/background/bg.jpg") no-repeat center fixed;
   background-size: cover;
-  padding: 3% 5%;
-}
-
-.button-move {
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background: #f1eaff;
-  color: #392467;
-  transition: 300ms;
-}
-
-.button-move:hover {
-  background: #392467;
-  color: #f1eaff;
-  transform: scale(1.1);
-}
-
-.button-move:hover:active {
-  transform: scale(0.9);
 }

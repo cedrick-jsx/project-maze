@@ -1,43 +1,33 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button, {
-  ButtonChildren,
-  ButtonChildrenContainer,
-} from "../components/Button";
+import Button, { ButtonMove, ButtonName } from "../components/Button";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import {
-  faDownLong,
-  faLeftLong,
-  faRightFromBracket,
-  faRightLong,
-  faUpLong,
-} from "@fortawesome/free-solid-svg-icons";
-import CowFace from "../img/emoji/cow-face.webp";
+import Hero from "../img/gif/gif.gif";
 import { useEffect, useRef, useState } from "react";
 
-const mazeArray = Array(25).fill(null);
+const moveMaze = ["left", "down", "right"];
+const mazeArray = Array(64).fill(null);
 
 export default function Play() {
-  const [mazeFoot, setMazeFoot] = useState(0);
+  const [mazeFoot, setMazeFoot] = useState(3);
 
-  // const mazeFocus = useRef(null);
+  const mazeFocus = useRef(null);
   // const globalFocus = useRef(null);
 
   // useEffect(() => {
   //   globalFocus.current.focus();
   // }, []);
 
-  // useEffect(() => {
-  //   mazeFocus.current.focus();
-  // }, []);
+  useEffect(() => {
+    mazeFocus.current.focus();
+  }, []);
 
   return (
     <Container>
       <Header>Maze</Header>
 
       <div
-        // ref={mazeFocus.current.focus()}
-        tabIndex={1}
+        ref={mazeFocus}
+        tabIndex={-1}
         onKeyDown={(e) => {
           if (e.key === "d") setMazeFoot((maze) => maze + 1);
         }}
@@ -45,38 +35,107 @@ export default function Play() {
           "flex flex-col place-content-center place-items-center w-full"
         }
       >
-        <div
-          className={"w-[300px] h-[300px] outline outline-[3px] flex flex-wrap"}
-        >
+        <div className={"w-[320px] h-[320px] flex flex-wrap"}>
           {mazeArray.map((maze, id) => (
             <div
+              tabIndex={-1}
               key={id}
-              className={`text-transparent w-[60px] h-[60px] ${
-                id == 0 ? "bg-[green]" : id === 24 && "bg-[red]"
-              } bg-[#f1eaff] ${
-                (id === 10 ||
-                  id === 11 ||
+              className={`text-transparent w-[40px] h-[40px] bg-[#f1eaff] ${
+                (id === 0 ||
+                  id === 1 ||
+                  id === 2 ||
+                  id === 4 ||
+                  id === 5 ||
+                  id === 6 ||
+                  id === 7 ||
                   id === 13 ||
-                  id == 17 ||
-                  id === 21 ||
-                  id == 24) &&
-                "border-t-[3px] border-[black]"
+                  id === 22) &&
+                "border-t-[5px] border-[black]"
               } ${
-                (id === 1 ||
+                (id === 0 ||
+                  id === 3 ||
+                  id === 5 ||
+                  id === 7 ||
+                  id === 9 ||
+                  id === 12 ||
+                  id === 14 ||
+                  id === 15 ||
+                  id === 17 ||
+                  id === 21 ||
+                  id === 23 ||
+                  id === 25 ||
+                  id === 29 ||
+                  id === 31 ||
+                  id === 37 ||
+                  id === 39 ||
+                  id === 42 ||
+                  id === 47 ||
+                  id === 50 ||
+                  id === 55 ||
+                  id === 58 ||
+                  id === 63) &&
+                "border-r-[5px] border-[black]"
+              } ${
+                (id === 3 ||
                   id === 8 ||
                   id === 10 ||
+                  id === 11 ||
                   id === 12 ||
+                  id === 19 ||
+                  id === 20 ||
+                  id === 21 ||
+                  id === 23 ||
+                  id === 25 ||
+                  id === 27 ||
+                  id === 28 ||
+                  id === 30 ||
+                  id === 34 ||
+                  id === 35 ||
+                  id === 37 ||
+                  id === 39 ||
+                  id === 41 ||
+                  id === 43 ||
+                  id === 44 ||
+                  id === 46 ||
+                  id === 50 ||
+                  id === 52 ||
+                  id === 53 ||
+                  id === 55 ||
+                  id === 56 ||
+                  id === 57 ||
+                  id === 58 ||
+                  id === 59 ||
+                  id === 61 ||
+                  id === 62 ||
+                  id === 63) &&
+                "border-b-[5px] border-[black]"
+              } ${
+                (id === 0 ||
+                  id === 8 ||
                   id === 16 ||
-                  id === 17 ||
-                  id === 22) &&
-                "border-r-[3px] border-[black]"
-              } ${(id === 1 || id == 2) && "border-b-[3px] border-[black]"} ${
-                id === 19 && "border-l-[3px] border-[black]"
+                  id === 24 ||
+                  id === 25 ||
+                  id === 27 ||
+                  id === 32 ||
+                  id === 33 ||
+                  id === 40 ||
+                  id === 45 ||
+                  id === 48 ||
+                  id === 49 ||
+                  id === 54 ||
+                  id === 56 ||
+                  id === 57 ||
+                  id === 61) &&
+                "border-l-[5px] border-[black]"
               }`}
             >
-              <div className={`w-full h-full text-[black] relative`}>
+              <div className={`w-full h-full text-[black]`}>
                 {mazeFoot === id && (
-                  <img src={CowFace} alt="Cow" className={"w-full h-full"} />
+                  <img
+                    src={Hero}
+                    alt="Hero"
+                    className={"w-[40px] h-[40px] absolute z-10"}
+                  />
                 )}
                 {maze}
                 {/* {id} */}
@@ -84,105 +143,33 @@ export default function Play() {
             </div>
           ))}
         </div>
+      </div>
 
+      <div
+        tabIndex={-1}
+        className={
+          "mt-[10px] flex flex-col place-content-center place-items-center w-[200px]"
+        }
+      >
+        <ButtonMove value="up" mazeFoot={mazeFoot} setMazeFoot={setMazeFoot} />
         <div
-          className={
-            "mt-[10px] flex flex-col place-content-center place-items-center w-[200px]"
-          }
+          tabIndex={-1}
+          className={"w-full flex place-content-evenly mt-[10px]"}
         >
-          <button
-            className="button-move"
-            value="move"
-            onClick={() => {
-              if (mazeFoot === 5) setMazeFoot(0);
-              else if (mazeFoot === 8) setMazeFoot(3);
-              else if (mazeFoot === 9) setMazeFoot(4);
-              else if (mazeFoot === 12) setMazeFoot(7);
-              else if (mazeFoot === 14) setMazeFoot(9);
-              else if (mazeFoot === 15) setMazeFoot(10);
-              else if (mazeFoot === 16) setMazeFoot(11);
-              else if (mazeFoot === 18) setMazeFoot(13);
-              else if (mazeFoot === 19) setMazeFoot(14);
-              else if (mazeFoot === 20) setMazeFoot(15);
-              else if (mazeFoot === 22) setMazeFoot(17);
-              else if (mazeFoot === 23) setMazeFoot(18);
-            }}
-          >
-            <FontAwesomeIcon icon={faUpLong} />
-          </button>
-          <div className={"w-full flex place-content-evenly mt-[5px]"}>
-            <button
-              className="button-move"
-              value="move"
-              onClick={() => {
-                if (mazeFoot === 1) setMazeFoot(0);
-                else if (mazeFoot === 3) setMazeFoot(2);
-                else if (mazeFoot === 4) setMazeFoot(3);
-                else if (mazeFoot === 6) setMazeFoot(5);
-                else if (mazeFoot === 7) setMazeFoot(6);
-                else if (mazeFoot === 8) setMazeFoot(7);
-                else if (mazeFoot === 12) setMazeFoot(11);
-                else if (mazeFoot === 14) setMazeFoot(13);
-                else if (mazeFoot === 16) setMazeFoot(15);
-                else if (mazeFoot === 21) setMazeFoot(20);
-                else if (mazeFoot === 22) setMazeFoot(21);
-                else if (mazeFoot === 24) setMazeFoot(23);
-              }}
-            >
-              <FontAwesomeIcon icon={faLeftLong} />
-            </button>
-            <button
-              className="button-move"
-              value="move"
-              onClick={() => {
-                if (mazeFoot === 0) setMazeFoot(5);
-                else if (mazeFoot === 3) setMazeFoot(8);
-                else if (mazeFoot === 4) setMazeFoot(9);
-                else if (mazeFoot === 7) setMazeFoot(12);
-                else if (mazeFoot === 9) setMazeFoot(14);
-                else if (mazeFoot === 10) setMazeFoot(15);
-                else if (mazeFoot === 11) setMazeFoot(16);
-                else if (mazeFoot === 13) setMazeFoot(18);
-                else if (mazeFoot === 14) setMazeFoot(19);
-                else if (mazeFoot === 15) setMazeFoot(20);
-                else if (mazeFoot === 17) setMazeFoot(22);
-                else if (mazeFoot === 18) setMazeFoot(23);
-              }}
-            >
-              <FontAwesomeIcon icon={faDownLong} />
-            </button>
-            <button
-              className="button-move"
-              value="move"
-              onClick={() => {
-                if (mazeFoot === 0) setMazeFoot(1);
-                else if (mazeFoot === 2) setMazeFoot(3);
-                else if (mazeFoot === 3) setMazeFoot(4);
-                else if (mazeFoot === 5) setMazeFoot(6);
-                else if (mazeFoot === 6) setMazeFoot(7);
-                else if (mazeFoot === 7) setMazeFoot(8);
-                else if (mazeFoot === 11) setMazeFoot(12);
-                else if (mazeFoot === 13) setMazeFoot(14);
-                else if (mazeFoot === 15) setMazeFoot(16);
-                else if (mazeFoot === 20) setMazeFoot(21);
-                else if (mazeFoot === 21) setMazeFoot(22);
-                else if (mazeFoot === 23) setMazeFoot(24);
-              }}
-            >
-              <FontAwesomeIcon icon={faRightLong} />
-            </button>
-          </div>
+          {moveMaze.map((move, id) => (
+            <ButtonMove
+              key={id}
+              tabIndex={-1}
+              value={move}
+              mazeFoot={mazeFoot}
+              setMazeFoot={setMazeFoot}
+            />
+          ))}
         </div>
       </div>
 
-      <Button value="level">
-        <ButtonChildrenContainer>
-          <FontAwesomeIcon
-            className={"text-[1.5rem] animate-faFade"}
-            icon={faRightFromBracket}
-          />
-          <ButtonChildren>Back</ButtonChildren>
-        </ButtonChildrenContainer>
+      <Button tabIndex={-1} value="level">
+        <ButtonName>Back</ButtonName>
       </Button>
     </Container>
   );
