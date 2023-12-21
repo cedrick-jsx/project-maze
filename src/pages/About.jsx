@@ -1,8 +1,7 @@
 import Button, { ButtonName } from "../components/Button";
 import Container from "../components/Container";
 import Header from "../components/Header";
-
-import Cedrick from "../img/teams/cedrick.png";
+import Cedrick from "../assets/img/teams/cedrick.png";
 
 const bio = [
   {

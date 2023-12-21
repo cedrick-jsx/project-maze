@@ -10,8 +10,9 @@ export default {
         custom: ["0 0 1px #000000", "0 0 1px #000000", "0 0 1px #000000"],
       },
       backgroundImage: {
-        cow: `url("./src/img/emoji/cow-face.webp")`,
-        cedrick: `url("./src/img/teams/cedrick.png")`,
+        cow: `url("./src/assets/img/emoji/cow-face.webp")`,
+        cedrick: `url("./src/assets/img/teams/cedrick.png")`,
+        maze: `url("./src/assets/img/background/bg.jpg")`,
       },
       animation: {
         faFade: "fa-fade 1000ms linear infinite",
