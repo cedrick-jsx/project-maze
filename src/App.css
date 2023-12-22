@@ -1,0 +1,12 @@
+*,
+::before,
+::after {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+body {
+  background: url("./assets/img/background/bg.jpg") no-repeat center fixed;
+  background-size: cover;
+}

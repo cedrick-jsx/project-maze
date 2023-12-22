@@ -1,3 +1,4 @@
+import "./App.css";
 import Start from "./pages/Start";
 import { Route, Routes } from "react-router";
 import About from "./pages/About";
