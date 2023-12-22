@@ -1097,7 +1097,7 @@ export default function Play() {
                         ? "w-[45px] h-[45px]"
                         : currentLevel.current === 2
                         ? "w-[22.5px] h-[22.5px]"
-                        : currentLevel.current === 3 && "w-[11.25] h-[11.25]"
+                        : currentLevel.current >= 3 && "w-[11.25] h-[11.25]"
                     } absolute z-10`}
                   />
                 )}
