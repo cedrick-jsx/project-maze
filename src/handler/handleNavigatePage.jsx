@@ -8,10 +8,21 @@ export const handleNavigatePage = (props) => {
     if (!localStorage.mazeCurrentLevel)
       localStorage.setItem("mazeCurrentLevel", 0);
     else if (props.value === "next" || props.value === "end") {
-      localStorage.setItem(
-        "mazeCurrentLevel",
-        parseInt(localStorage.mazeCurrentLevel) + 1
-      );
+      if (
+        (parseInt(localStorage.maze1) === 60 &&
+          parseInt(localStorage.mazeCurrentLevel) === 0) ||
+        (parseInt(localStorage.maze2) === 248 &&
+          parseInt(localStorage.mazeCurrentLevel) === 1) ||
+        (parseInt(localStorage.maze3) === 1008 &&
+          parseInt(localStorage.mazeCurrentLevel) === 2) ||
+        (parseInt(localStorage.maze4) === 15 &&
+          parseInt(localStorage.mazeCurrentLevel) === 3)
+      ) {
+        localStorage.setItem(
+          "mazeCurrentLevel",
+          parseInt(localStorage.mazeCurrentLevel) + 1
+        );
+      }
       if (parseInt(localStorage.maze1) === 60) localStorage.removeItem("maze1");
       else if (parseInt(localStorage.maze2) === 248)
         localStorage.removeItem("maze2");
