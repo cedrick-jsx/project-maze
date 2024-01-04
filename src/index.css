@@ -6,3 +6,9 @@
   font-family: Titan;
   src: url("./assets/font/Titan/TitanOne-Regular.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: Concert;
+  src: url("./assets/font/Concert_One/ConcertOne-Regular.ttf")
+    format("truetype");
+}
