@@ -28,16 +28,16 @@ const keyBoard = [
 
 const keyArrow = [
   {
-    press: `Pressing ${`"🡹"`} moves your character upward.`,
+    press: `Pressing ${`"↑"`} moves your character upward.`,
   },
   {
-    press: `Pressing ${`"🡸"`} moves your character left.`,
+    press: `Pressing ${`"←"`} moves your character left.`,
   },
   {
-    press: `Pressing ${`"🡻"`} moves your character downward.`,
+    press: `Pressing ${`"↓"`} moves your character downward.`,
   },
   {
-    press: `Pressing ${`"🡺"`} moves your character right.`,
+    press: `Pressing ${`"→"`} moves your character right.`,
   },
 ];
 
