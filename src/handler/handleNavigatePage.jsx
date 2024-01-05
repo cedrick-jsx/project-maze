@@ -41,6 +41,7 @@ export const handleNavigatePage = (props) => {
       else if (parseInt(localStorage.nextLevel) === 3)
         localStorage.setItem("mazeLevel", 4);
       props.navigate(0);
+      props.navigate("/Play", { replace: true });
     } else props.navigate("/Level", { replace: true });
   } else if (props.value === "guide")
     props.navigate("/Guide", { replace: true });
