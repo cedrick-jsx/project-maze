@@ -18,8 +18,6 @@ export default function Play() {
 
   const currentLevel = useRef(parseInt(localStorage.mazeLevel));
 
-  localStorage.setItem("nextLevel", parseInt(currentLevel.current));
-
   const mazeMove = useRef(null);
 
   const mazeFocus = useRef(null);

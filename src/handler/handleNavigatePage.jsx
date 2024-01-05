@@ -32,16 +32,7 @@ export const handleNavigatePage = (props) => {
         localStorage.removeItem("maze4");
     }
     if (props.value === "end") props.navigate("/About", { replace: true });
-    else if (props.value === "next") {
-      console.log(localStorage.nextLevel);
-      if (parseInt(localStorage.nextLevel) === 1)
-        localStorage.setItem("mazeLevel", 2);
-      else if (parseInt(localStorage.nextLevel) === 2)
-        localStorage.setItem("mazeLevel", 3);
-      else if (parseInt(localStorage.nextLevel) === 3)
-        localStorage.setItem("mazeLevel", 4);
-      props.navigate(0);
-    } else props.navigate("/Level", { replace: true });
+    else props.navigate("/Level", { replace: true });
   } else if (props.value === "guide")
     props.navigate("/Guide", { replace: true });
   else if (props.value === "about") props.navigate("/About", { replace: true });
@@ -55,6 +46,6 @@ export const handleNavigatePage = (props) => {
     else if (props.mazeLevel === 2) localStorage.setItem("mazeLevel", 2);
     else if (props.mazeLevel === 3) localStorage.setItem("mazeLevel", 3);
     else if (props.mazeLevel === 4) localStorage.setItem("mazeLevel", 4);
-    props.navigate("/Play");
+    props.navigate("/Play", { replace: true });
   }
 };
