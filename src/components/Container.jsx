@@ -30,9 +30,9 @@ const MarginDiv = () => {
 const AbsoluteDiv = (props) => {
   return (
     <div
-      className={`grid 4xs:grid-cols-[175px_auto] 4xs:w-[280px] 3xs:grid-cols-[175px_auto] 3xs:w-[280px] 2xs:grid-cols-[235px_auto] 2xs:w-[380px] xs:grid-cols-[305px_auto] xs:w-[480px] sm:grid-cols-[375px_auto] sm:w-[580px] md:grid-cols-[375px_auto] md:w-[580px] lg:grid-cols-[375px_auto] lg:w-[580px] xl:absolute xl:top-[50] xl:left-[-55%] xl:grid-cols-1 xl:place-content-center xl:place-items-center 2xl:absolute 2xl:top-[50] 2xl:left-[-60%] 2xl:grid-cols-1 2xl:place-content-center 2xl:place-items-center ${
+      className={`grid 4xs:grid-cols-[175px_auto] 4xs:w-[280px] 3xs:grid-cols-[175px_auto] 3xs:w-[280px] 2xs:grid-cols-[235px_auto] 2xs:w-[380px] xs:grid-cols-[305px_auto] xs:w-[480px] sm:grid-cols-[375px_auto] sm:w-[580px] md:grid-cols-[375px_auto] md:w-[580px] lg:grid-cols-[375px_auto] lg:w-[580px] xl:absolute xl:top-[50] xl:left-[-55%] xl:place-content-center xl:place-items-center 2xl:absolute 2xl:top-[50] 2xl:left-[-50%] 2xl:place-content-center 2xl:place-items-center ${
         props.value === "guide" &&
-        "hidden xl:grid xl:left-full xl:right-[-45%] 2xl:grid 2xl:left-full 2xl:right-[-50%]"
+        "hidden xl:grid xl:left-full xl:right-[-45%] 2xl:grid 2xl:left-0 2xl:right-[-37%] 2xl:place-content-end 2xl:place-items-end"
       }`}
     >
       {props.children}

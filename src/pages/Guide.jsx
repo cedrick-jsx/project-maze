@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button, { ButtonMove, ButtonName } from "../components/Button";
 import Container, {
   GuideChildrenContainer,
@@ -10,6 +11,12 @@ import Container, {
   HeaderDiv,
 } from "../components/Container";
 import Header from "../components/Header";
+import {
+  faDownLong,
+  faLeftLong,
+  faRightLong,
+  faUpLong,
+} from "@fortawesome/free-solid-svg-icons";
 
 const keyBoard = [
   {
@@ -28,16 +35,16 @@ const keyBoard = [
 
 const keyArrow = [
   {
-    press: `Pressing ${`"↑"`} moves your character upward.`,
+    press: `moves your character upward.`,
   },
   {
-    press: `Pressing ${`"←"`} moves your character left.`,
+    press: `moves your character left.`,
   },
   {
-    press: `Pressing ${`"↓"`} moves your character downward.`,
+    press: `moves your character downward.`,
   },
   {
-    press: `Pressing ${`"→"`} moves your character right.`,
+    press: `moves your character right.`,
   },
 ];
 
@@ -146,7 +153,22 @@ export default function Guide() {
           <GuideContentChildren>
             {keyArrow.map((data, id) => (
               <GuideContainer key={id}>
-                <GuideContent>{data.press}</GuideContent>
+                <GuideContent>
+                  Pressing{` "`}
+                  <FontAwesomeIcon
+                    icon={
+                      id === 0
+                        ? faUpLong
+                        : id === 1
+                        ? faLeftLong
+                        : id === 2
+                        ? faDownLong
+                        : id === 3 && faRightLong
+                    }
+                  />
+                  {`" `}
+                  {data.press}
+                </GuideContent>
               </GuideContainer>
             ))}
           </GuideContentChildren>
