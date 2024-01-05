@@ -18,6 +18,8 @@ export default function Play() {
 
   const currentLevel = useRef(parseInt(localStorage.mazeLevel));
 
+  localStorage.setItem("nextLevel", parseInt(currentLevel.current));
+
   const mazeMove = useRef(null);
 
   const mazeFocus = useRef(null);
@@ -51,7 +53,7 @@ export default function Play() {
   return (
     <Container value="center">
       <AbsoluteDiv>
-        <Header>Amaze {currentLevel.current}</Header>
+        <Header header="play">Amaze {currentLevel.current}</Header>
 
         <Button
           tabIndex={-1}
@@ -116,7 +118,7 @@ export default function Play() {
       >
         <div
           className={
-            "flex flex-wrap w-full 4xs:w-[280px] 3xs:w-[280px] 2xs:w-[380px] xs:w-[480px] sm:w-[480px] md:w-[480px] lg:w-[580px] xl:w-[580px] 2xl:w-[580px]"
+            "flex flex-wrap w-full 4xs:w-[280px] 3xs:w-[280px] 2xs:w-[380px] xs:w-[480px] sm:w-[580px] md:w-[580px] lg:w-[580px] xl:w-[580px] 2xl:w-[580px]"
           }
         >
           {(currentLevel.current === 1
@@ -130,11 +132,11 @@ export default function Play() {
               key={id}
               className={`${
                 currentLevel.current === 1
-                  ? "4xs:w-[35px] 4xs:h-[35px] 3xs:w-[35px] 3xs:h-[35px] 2xs:w-[47.5px] 2xs:h-[47.5px] xs:w-[60px] xs:h-[60px] sm:w-[60px] sm:h-[60px] md:w-[60px] md:h-[60px] lg:w-[72.5px] lg:h-[72.5px] xl:w-[72.5px] xl:h-[72.5px] 2xl:w-[72.5px] 2xl:h-[72.5px]"
+                  ? "4xs:w-[35px] 4xs:h-[35px] 3xs:w-[35px] 3xs:h-[35px] 2xs:w-[47.5px] 2xs:h-[47.5px] xs:w-[60px] xs:h-[60px] sm:w-[72.5px] sm:h-[72.5px] md:w-[72.5px] md:h-[72.5px] lg:w-[72.5px] lg:h-[72.5px] xl:w-[72.5px] xl:h-[72.5px] 2xl:w-[72.5px] 2xl:h-[72.5px]"
                   : currentLevel.current === 2
-                  ? "4xs:w-[17.5px] 4xs:h-[17.5px] 3xs:w-[17.5px] 3xs:h-[17.5px] 2xs:w-[23.75px] 2xs:h-[23.75px] xs:w-[30px] xs:h-[30px] sm:w-[30px] sm:h-[30px] md:w-[30px] md:h-[30px] lg:w-[36.25px] lg:h-[36.25px] xl:w-[36.25px] xl:h-[36.25px] 2xl:w-[36.25px] 2xl:h-[36.25px]"
+                  ? "4xs:w-[17.5px] 4xs:h-[17.5px] 3xs:w-[17.5px] 3xs:h-[17.5px] 2xs:w-[23.75px] 2xs:h-[23.75px] xs:w-[30px] xs:h-[30px] sm:w-[36.25px] sm:h-[36.25px] md:w-[36.25px] md:h-[36.25px] lg:w-[36.25px] lg:h-[36.25px] xl:w-[36.25px] xl:h-[36.25px] 2xl:w-[36.25px] 2xl:h-[36.25px]"
                   : currentLevel.current >= 3 &&
-                    "4xs:w-[8.75px] 4xs:h-[8.75px] 3xs:w-[8.75px] 3xs:h-[8.75px] 2xs:w-[11.875px] 2xs:h-[11.875px] xs:w-[15px] xs:h-[15px] sm:w-[15px] sm:h-[15px] md:w-[15px] md:h-[15px] lg:w-[18.125px] lg:h-[18.125px] xl:w-[18.125px] xl:h-[18.125px] 2xl:w-[18.125px] 2xl:h-[18.125px]"
+                    "4xs:w-[8.75px] 4xs:h-[8.75px] 3xs:w-[8.75px] 3xs:h-[8.75px] 2xs:w-[11.875px] 2xs:h-[11.875px] xs:w-[15px] xs:h-[15px] sm:w-[18.125px] sm:h-[18.125px] md:w-[18.125px] md:h-[18.125px] lg:w-[18.125px] lg:h-[18.125px] xl:w-[18.125px] xl:h-[18.125px] 2xl:w-[18.125px] 2xl:h-[18.125px]"
               } ${
                 (currentLevel.current === 1 && mazeFoot !== 60) ||
                 (currentLevel.current === 2 && mazeFoot !== 248) ||
@@ -1578,11 +1580,11 @@ const MazeImage = (props) => {
       alt={props.value}
       className={`${
         props.currentLevel.current === 1
-          ? "4xs:w-[35px] 4xs:h-[35px] 3xs:w-[35px] 3xs:h-[35px] 2xs:w-[47.5px] 2xs:h-[47.5px] xs:w-[60px] xs:h-[60px] sm:w-[60px] sm:h-[60px] md:w-[60px] md:h-[60px] lg:w-[72.5px] lg:h-[72.5px] xl:w-[72.5px] xl:h-[72.5px] 2xl:w-[72.5px] 2xl:h-[72.5px]"
+          ? "4xs:w-[35px] 4xs:h-[35px] 3xs:w-[35px] 3xs:h-[35px] 2xs:w-[47.5px] 2xs:h-[47.5px] xs:w-[60px] xs:h-[60px] sm:w-[72.5px] sm:h-[72.5px] md:w-[72.5px] md:h-[72.5px] lg:w-[72.5px] lg:h-[72.5px] xl:w-[72.5px] xl:h-[72.5px] 2xl:w-[72.5px] 2xl:h-[72.5px]"
           : props.currentLevel.current === 2
-          ? "4xs:w-[17.5px] 4xs:h-[17.5px] 3xs:w-[17.5px] 3xs:h-[17.5px] 2xs:w-[23.75px] 2xs:h-[23.75px] xs:w-[30px] xs:h-[30px] sm:w-[30px] sm:h-[30px] md:w-[30px] md:h-[30px] lg:w-[36.25px] lg:h-[36.25px] xl:w-[36.25px] xl:h-[36.25px] 2xl:w-[36.25px] 2xl:h-[36.25px] scale-125"
+          ? "4xs:w-[17.5px] 4xs:h-[17.5px] 3xs:w-[17.5px] 3xs:h-[17.5px] 2xs:w-[23.75px] 2xs:h-[23.75px] xs:w-[30px] xs:h-[30px] sm:w-[36.25px] sm:h-[36.25px] md:w-[36.25px] md:h-[36.25px] lg:w-[36.25px] lg:h-[36.25px] xl:w-[36.25px] xl:h-[36.25px] 2xl:w-[36.25px] 2xl:h-[36.25px] scale-125"
           : props.currentLevel.current >= 3 &&
-            "4xs:w-[8.75px] 4xs:h-[8.75px] 3xs:w-[8.75px] 3xs:h-[8.75px] 2xs:w-[11.875px] 2xs:h-[11.875px] xs:w-[15px] xs:h-[15px] sm:w-[15px] sm:h-[15px] md:w-[15px] md:h-[15px] lg:w-[18.125px] lg:h-[18.125px] xl:w-[18.125px] xl:h-[18.125px] 2xl:w-[18.125px] 2xl:h-[18.125px] scale-[2]"
+            "4xs:w-[8.75px] 4xs:h-[8.75px] 3xs:w-[8.75px] 3xs:h-[8.75px] 2xs:w-[11.875px] 2xs:h-[11.875px] xs:w-[15px] xs:h-[15px] sm:w-[18.125px] sm:h-[18.125px] md:w-[18.125px] md:h-[18.125px] lg:w-[18.125px] lg:h-[18.125px] xl:w-[18.125px] xl:h-[18.125px] 2xl:w-[18.125px] 2xl:h-[18.125px] scale-[2]"
       } absolute ${props.value === "Hero" && "z-10"}`}
     />
   );
