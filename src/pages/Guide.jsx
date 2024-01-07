@@ -95,7 +95,7 @@ export default function Guide() {
               </div>
             </GuideChildrenContainer>
 
-            <GuideKey>Keys</GuideKey>
+            <GuideKey value="keys">Keys</GuideKey>
           </GuideMainContainer>
 
           <GuideContentChildren>
@@ -147,7 +147,7 @@ export default function Guide() {
                 />
               </div>
             </GuideChildrenContainer>
-            <GuideKey>Keys</GuideKey>
+            <GuideKey value="keys">Keys</GuideKey>
           </GuideMainContainer>
 
           <GuideContentChildren>

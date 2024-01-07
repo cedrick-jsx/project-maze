@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Cedrick from "../assets/img/teams/cedrick.png";
 import Aubrey from "../assets/img/teams/aubrey.jpg";
 import Mary from "../assets/img/teams/mary.jpg";
-import Others from "../assets/img/gif/photo.gif";
+import Others from "../assets/img/icon/favicon.png";
 
 const bio = [
   {
@@ -96,11 +96,7 @@ export default function About() {
                     "text-center text-[25px] uppercase text-[#fed9ed] font-concert font-semibold mt-[8px] tracking-[3px] drop-shadow-[0_0_5px_#000000]"
                   }
                 >
-                  {id === 0 || id === 4
-                    ? "Developer"
-                    : id === 3
-                    ? "Manager"
-                    : "Designer"}
+                  {id === 0 ? "Developer" : id === 4 ? "Analyst" : "Designer"}
                 </p>
               </div>
             </div>

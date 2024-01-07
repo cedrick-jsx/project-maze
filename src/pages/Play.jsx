@@ -115,9 +115,14 @@ export default function Play() {
         className={"outline-none"}
       >
         <div
-          className={
-            "flex flex-wrap w-full 4xs:w-[280px] 3xs:w-[280px] 2xs:w-[380px] xs:w-[480px] sm:w-[580px] md:w-[580px] lg:w-[580px] xl:w-[580px] 2xl:w-[700px]"
-          }
+          className={`flex flex-wrap w-full 4xs:w-[280px] 3xs:w-[280px] 2xs:w-[380px] xs:w-[480px] sm:w-[580px] md:w-[580px] lg:w-[580px] xl:w-[580px] 2xl:w-[700px] ${
+            (currentLevel.current === 1 && mazeFoot !== 60) ||
+            (currentLevel.current === 2 && mazeFoot !== 248) ||
+            (currentLevel.current === 3 && mazeFoot !== 1008) ||
+            (currentLevel.current === 4 && mazeFoot !== 15)
+              ? "bg-pink-950"
+              : "bg-pink-500"
+          }`}
         >
           {(currentLevel.current === 1
             ? mazeArray1

@@ -55,7 +55,7 @@ const GuideParentContainer = (props) => {
 const GuideMainContainer = (props) => {
   return (
     <div
-      className={`flex mt-[5%] px-[5%] w-full mb-[30px] lg:flex-col xl:flex-col 2xl:flex-col ${
+      className={`flex place-content-center place-items-center mt-[5%] px-[5%] w-full mb-[30px] lg:flex-col xl:flex-col 2xl:flex-col ${
         props.value === "arrowKeys" && "lg:order-2 xl:order-2 2xl:order-2"
       }`}
     >
@@ -67,9 +67,7 @@ const GuideMainContainer = (props) => {
 const GuideChildrenContainer = (props) => {
   return (
     <div
-      className={
-        "flex flex-col place-content-center place-items-center w-full lg:mb-[5%] xl:mb-[5%] 2xl:mb-[5%]"
-      }
+      className={`flex flex-col place-content-center place-items-center 4xs:w-2/4 3xs:w-2/4 2xs:w-3/5 xs:w-[200px] sm:w-[200px] md:w-[200px] w-full lg:mb-[5%] xl:mb-[5%] 2xl:mb-[5%]`}
     >
       {props.children}
     </div>
@@ -112,7 +110,13 @@ const GuideContentChildren = (props) => {
 
 const GuideKey = (props) => {
   return (
-    <div className="w-full uppercase tracking-[1px] font-concert font-bold text-pink-500 drop-shadow-textShadow 4xs:text-[2rem] 3xs:text-[2rem] 2xs:text-[2.3rem] xs:text-[2.6rem] sm:text-[2.9rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.8rem] 2xl:text-[4.2rem] lg:text-center xl:text-center 2xl:text-center">
+    <div
+      className={`${
+        props.value === "keys"
+          ? "4xs:w-2/6 3xs:w-2/6 2xs:w-2/6 xs:w-[120px] sm:w-[120px] md:w-[120px] w-full"
+          : "w-full"
+      } uppercase tracking-[1px] font-concert font-bold text-pink-500 drop-shadow-textShadow 4xs:text-[2rem] 3xs:text-[2rem] 2xs:text-[2.3rem] xs:text-[2.6rem] sm:text-[2.9rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[3.8rem] 2xl:text-[4.2rem] lg:text-center xl:text-center 2xl:text-center`}
+    >
       <p>{props.children}</p>
     </div>
   );
